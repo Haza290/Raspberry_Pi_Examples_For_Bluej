@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Interactive Piano</title>
+	<script src="paho.js"></script>
+</head>
+<body>
+	<h1>Piano Internet of Things Example</h1>
+	<img src="piano.png" width="1110" height="346" alt="Pianos" usemap="#pianomap">
+	<map name="pianomap" id="pianomap">
+		<area id="eb" alt="" title="eb" shape="rect" coords="137,0,178,199" onclick="note(this)" />
+		<area id="g#" alt="" title="g#" shape="rect" coords="372,0,413,199" onclick="note(this)"    />
+		<area id="Bb" alt="" title="Bb" shape="rect" coords="451,0,492,199" onclick="note(this)" />
+		<area id="C#" alt="" title="C#" shape="rect" coords="608,0,649,199" onclick="note(this)" />
+		<area id="D#" alt="" title="D#" shape="rect" coords="686,0,727,199" onclick="note(this)" />
+		<area id="F#" alt="" title="F#" shape="rect" coords="843,0,883,199" onclick="note(this)" />
+		<area id="G#" alt="" title="G#" shape="rect" coords="921,0,961,199" onclick="note(this)" />
+		<area id="c" alt="" title="c" shape="poly" coords="0,1,0,344,79,344,78,197,59,197,58,2" onclick="note(this)" />
+		<area id="c#" alt="" title="c#" shape="poly" coords="100,198,59,197,59,1,99,3" onclick="note(this)" />
+		<area id="d" alt="" title="d" shape="poly" coords="79,197,78,344,157,344,157,197,137,198,137,2,100,2,100,198" onclick="note(this)" />
+		<area id="e" alt="" title="e" shape="poly" coords="236,2,236,344,157,344,158,198,179,198,178,1" onclick="note(this)" />
+		<area id="f" alt="" title="f" shape="poly" coords="236,344,236,2,294,1,294,198,315,196,315,344" onclick="note(this)"    />
+		<area id="f#" alt="" title="f#" shape="poly" coords="335,197,335,0,295,1,294,198" onclick="note(this)" />
+		<area id="g" alt="" title="g" shape="poly" coords="315,344,315,197,335,197,335,1,372,0,371,199,392,198,392,344" onclick="note(this)" />
+		<area id="A" alt="" title="A" shape="poly" coords="392,344,393,198,413,198,414,2,452,3,451,197,472,198,472,344" onclick="note(this)" />
+		<area id="B" alt="" title="B" shape="poly" coords="472,344,472,198,493,197,493,1,549,0,549,344" onclick="note(this)" />
+		<area id="C" alt="" title="C" shape="poly" coords="550,343,550,1,608,1,607,197,627,199,627,343" onclick="note(this)" />
+		<area id="D" alt="" title="D" shape="poly" coords="627,343,707,343,706,197,686,197,685,1,649,1,649,199,628,199" onclick="note(this)" />
+		<area id="E" alt="" title="E" shape="poly" coords="707,343,785,344,784,1,726,2,727,198,707,198" onclick="note(this)" />
+		<area id="F" alt="" title="F" shape="poly" coords="785,345,785,2,844,1,842,196,864,198,864,344" onclick="note(this)" />
+		<area id="G" alt="" title="G" shape="poly" coords="863,344,863,198,885,197,884,2,921,2,920,199,941,198,942,344" onclick="note(this)" />
+		<area id="A2" alt="" title="A2" shape="poly" coords="1020,344,941,344,942,199,961,198,962,2,1000,2,999,198,1020,199" onclick="note(this)" />
+		<area id="B2" alt="" title="B2" shape="poly" coords="1021,197,1041,199,1040,2,1099,2,1099,343,1021,345" onclick="note(this)" />
+		<area id="Bb2" alt="" title="Bb2" shape="rect" coords="1000,0,1040,199" onclick="note(this)" />
+	</map>
+	<h2>Output</h2>
+	<textarea name="output" rows="15" id="output"></textarea>
+	<script>
+		function note(e) {
+			document.getElementById("output").value += "Playing: " + e.id + "\n";
+			document.getElementById("output").scrollTop = document.getElementById("output").scrollHeight; 
+			message = new Paho.MQTT.Message(e.id);
+		  	message.destinationName = "unikent/users/ojp5/piano";
+		  	client.send(message);
+		}
+
+
+		client = new Paho.MQTT.Client("doughnut.kent.ac.uk", Number("9001"), "pianoIOT");
+		client.connect({onSuccess:onConnect});
+
+		function onConnect() {
+		  	document.getElementById("output").value += "Connected to MQTT\n";
+		}
+	</script>
+</body>
+</html>
