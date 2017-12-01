@@ -1,5 +1,7 @@
 # Raspberry_Pi_Examples_For_Blue
 
+## Overview
+
 This repository contains the code for a website that was intended to help educators teach beginers java using blueJ, an IDE developed by kent university to help people learn java, on a raspberry Pi
 
 The primary focus of this project is to teach and reinforce basic programming concepts of Java. To do this, we took advantage of Raspbian’s built in support for BlueJ and developed a wide variety of simple, but useful examples and tasks that interact with the Raspberry Pi and various physical components. These examples and tasks are at different levels of complexity, and the use of clear and concise tutorials will allow users to build upon their knowledge in a structured form.
@@ -12,7 +14,7 @@ We produced as many projects from the “planned projects” document as possibl
 
 The concepts we touched upon include but are not limited to: Variables; calling Functions; using Objects within other Classes; simple and complex data structures; generic constructs such as For and While loops; Algorithms. As our intended target audience is beginner programmers (or end of first term Computer Science students), we did not set out to teach these concepts from scratch, rather reinforce them with interesting projects.
 
-As mentioned in the planning section, we felt that the examples didn’t quite provide enough educational value to our project. The format was changed to include the complete example class, PDF tutorial, and when applicable, incomplete and completed exercise classes.
+We felt that the examples didn’t quite provide enough educational value to our project. The format was changed to include the complete example class, PDF tutorial, and when applicable, incomplete and completed exercise classes.
 
 The example classes contain fully working examples that utilize various components wired up to the Pi. These are our projects that we were previously working on before we modified our format slightly to include the extra material.
 
