@@ -1,6 +1,8 @@
-# Raspberry_Pi_Examples_For_Blue - README is work in progress
+# Raspberry_Pi_Examples_For_Blue
 
 This repository contains the code for a website that was intended to help educators teach beginers java using blueJ, an IDE developed by kent university to help people learn java, on a raspberry Pi
+
+![Screen shot of the website](https://github.com/Haza290/Raspberry_Pi_Examples_For_Bluej/blob/master/Screenshots/homepage.png)
 
 ## Contents of this repository should contain:
 
