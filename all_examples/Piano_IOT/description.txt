@@ -1,0 +1,10 @@
+Description
+This project comes in two parts. The Java project that runs on the Pi, and the Piano Client that is accessed with a Web Browser. These two parts communicate using an MQTT server (Kent's Raptor by Default). When a note is played on the web client, the Pi detects what note is played and plays it through the Speaker.
+
+Parts Required
+1x Piezo Speaker (CEM-1203(42), PS1240 etc.)
+
+Assembly Instructions
+Disconnect Pi completely
+Connect Positive end of the speaker to whatever GPIO pin you want to use. This class used Pin X by default.
+Power On Pi
