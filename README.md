@@ -34,3 +34,4 @@ We felt that asking the user to perform simple tasks in order to extend onto a p
 - public_html - contains all the files needed to be copied to a webspace. Should also contain a readme that should be followed in order to install the website.
 - database.sql - This contains a dump of the c06_bluerasp database.
 - Screenshots - This folder contains screenshots of the website.
+- all_examples - This folder contains all java examples and tutorial projects.
